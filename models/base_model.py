@@ -1,24 +1,24 @@
 #!/usr/bin/python3
 import datetime
 import uuid
-from models.__init__ import storage
 
 class BaseModel:
     """a base class that defines all common attributes/methods for other classes"""
-   
-   def __init__(self, id, created_at, updated_at):
-       """a constructor that initializes Public instance attributes"""
-       self.id = uuid.uuid4()
-       self.created_at = datetime.now()
-       self.updated_at = datetime.now()
 
-    def ____init__(self, *args, **kwargs):  #will be checked
-        
+    def __init__(self, id, created_at, updated_at):
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
+    class_name = self.__class__.__name__ 
     def ____str__(self):
-        print('{} {} {}'.format(BaseModel, self.id, self, self.__dict__)) #this line will be checked later
+        print('{} {} {}'.format(class_name, self.id,  self.__dict__)) #this line will be checked later
     def save(self):
-        return self.updated_at
-        storage.save()
+        """updates the public instance attribute updated_at with the current datetime"""
+        self.updated_at = datetime.now()
+               
     def to_dict(self):
-        return json.dump(self.created_at) #will be checked and  updated
+        """returns a dictionary containing all keys/values of the instance"""
+        created_at.isoformat()
+        updated_at.isoformat()
+        return self.__dict__
