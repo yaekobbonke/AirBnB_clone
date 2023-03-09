@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import datetime
 import uuid
-
+from models.engine import storage
 class BaseModel:
     """a base class that defines all common attributes/methods for other classes"""
 
