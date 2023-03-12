@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-import datetime
+from datetime import datetime
 import uuid
-from models.engine import storage
+import json
+import models
 class BaseModel:
     """a base class that defines all common attributes/methods for other classes"""
 
@@ -16,13 +17,13 @@ class BaseModel:
                 else:
                     self.__dict__[key] = value
         else:
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
-        storage.new(self)
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            storage.new(self)
 
-    class_name = self.__class__.__name__ 
     def ____str__(self):
+        class_name = self.__class__.__name__
         print('[{}] {} {}'.format(class_name, self.id,  self.__dict__)) #this line will be checked later
     def save(self):
         """updates the public instance attribute updated_at with the current datetime"""

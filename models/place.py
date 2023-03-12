@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+from models.base_model import BaseModel
+
 class Place(BaseModel):
     """class that inherits from base class"""
     city_id = ''
@@ -14,4 +16,6 @@ class Place(BaseModel):
     longitude = 0.0
     amenity_ids = ''
 
+    def __init__(self, *args, **kwargs):
+        """constructor of place class"""
     super().__init__(self, *args, **kwargs):

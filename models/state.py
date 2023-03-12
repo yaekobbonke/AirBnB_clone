@@ -1,8 +1,20 @@
 #!/usr/bin/python3
+"""
+Module that creates States
+"""
+
+from models.base_model import BaseModel
+
 
 class State(BaseModel):
-    """state class that inherits from base class"""
+    """class State that inherits from BaseModel
+    public class attribute:
+    name: string - empty string
+    """
 
-    name = ''
+    name = ""
 
-    super().__init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
+        """create new state
+        """
+        super().__init__(self, *args, **kwargs)
