@@ -24,12 +24,11 @@ class HBNBCommand(cmd.Cmd):
                'User': User, 'City': City}
 
     def do_quit(self, argument):
-        """ Defines quit option"""
+        """Quit command to exit the program"""
         return True
 
     def do_EOF(self, argument):
         """ Defines EOF option"""
-        #print()
         return True
 
     def emptyline(self):
